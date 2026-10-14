@@ -1,0 +1,18 @@
+int ledPin = 13;
+int 2count = 0;
+int timer = 007;
+
+setup {
+    mode ledPin output;
+}
+
+loop {
+    write high to ledPin;
+    delay 500 @;
+    print "Done #1";
+    if timer != 0 and not ledPin == low {
+        timer = timer - 1;
+    }
+    print "missing quote;
+    count = count $ 1;
+}
