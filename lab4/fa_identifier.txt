@@ -1,0 +1,16 @@
+states: S A K
+alphabet: letter digit _
+initial: S
+finals: K
+classes:
+letter [A-Za-z]
+digit [0-9]
+transitions:
+S letter A
+S letter K
+A letter A
+A letter K
+A digit A
+A digit K
+A _ A
+A _ K

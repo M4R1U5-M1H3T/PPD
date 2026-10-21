@@ -1,0 +1,9 @@
+nonterminals: S N
+terminals: 0 nonzero digit
+start: S
+classes:
+nonzero [1-9]
+digit [0-9]
+productions:
+S -> 0 | nonzero N | nonzero
+N -> digit N | digit

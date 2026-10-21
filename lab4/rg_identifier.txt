@@ -1,0 +1,9 @@
+nonterminals: S A
+terminals: letter digit _
+start: S
+classes:
+letter [A-Za-z]
+digit [0-9]
+productions:
+S -> letter A | letter
+A -> letter A | letter | digit A | digit | _ A | _

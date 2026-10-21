@@ -1,0 +1,8 @@
+nonterminals: S A
+terminals: " char
+start: S
+classes:
+char [A-Za-z0-9 :.,!?=\-+_()%/*<>]
+productions:
+S -> " A
+A -> char A | "

@@ -1,0 +1,23 @@
+Symbol Table (hash table, 31 buckets, 20 symbols)
+
+position   symbol                   kind
+(0, 0)     9                        constant
+(1, 0)     countdown                identifier
+(5, 0)     30                       constant
+(10, 0)    "Average: "              constant
+(11, 0)    "Fan ON"                 constant
+(15, 0)    total                    identifier
+(17, 0)    i                        identifier
+(19, 0)    "Fan OFF"                constant
+(20, 0)    1000                     constant
+(21, 0)    limit                    identifier
+(22, 0)    0                        constant
+(23, 0)    sensorPin                identifier
+(23, 1)    1                        constant
+(23, 2)    200                      constant
+(24, 0)    fanPin                   identifier
+(25, 0)    average                  identifier
+(25, 1)    3                        constant
+(27, 0)    5                        constant
+(27, 1)    "Next check in: "        constant
+(30, 0)    readings                 identifier
