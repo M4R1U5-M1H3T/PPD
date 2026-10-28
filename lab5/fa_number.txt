@@ -1,0 +1,13 @@
+states: S N K
+alphabet: 0 nonzero digit
+initial: S
+finals: K
+classes:
+nonzero [1-9]
+digit [0-9]
+transitions:
+S 0 K
+S nonzero K
+S nonzero N
+N digit K
+N digit N

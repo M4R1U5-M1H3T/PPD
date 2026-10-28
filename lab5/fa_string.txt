@@ -1,0 +1,10 @@
+states: S A K
+alphabet: " char
+initial: S
+finals: K
+classes:
+char [A-Za-z0-9 :.,!?=\-+_()%/*<>]
+transitions:
+S " A
+A char A
+A " K
