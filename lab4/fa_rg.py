@@ -152,7 +152,7 @@ def rg_to_fa(rg):
     while final in rg.nonterminals:
         final += "'"
     transitions = {}
-    finals = {final}
+    finals = set()
     for left, rights in rg.productions.items():
         for rhs in rights:
             if len(rhs) == 0:
@@ -160,8 +160,20 @@ def rg_to_fa(rg):
             else:
                 target = rhs[1] if len(rhs) == 2 else final
                 transitions.setdefault((left, rhs[0]), set()).add(target)
-    return FA(list(rg.nonterminals) + [final], list(rg.terminals), rg.start,
-              finals, transitions, dict(rg.classes))
+    # If every transition into B also has a copy into K (A -> a B | a), stopping in K
+    # is the same as stopping in B: B becomes final and the copies into K are removed.
+    # The initial state is skipped, making it final would accept the empty sequence.
+    for state in rg.nonterminals:
+        incoming = [key for key, targets in transitions.items() if state in targets]
+        if state != rg.start and incoming and all(final in transitions[key] for key in incoming):
+            finals.add(state)
+            for key in incoming:
+                transitions[key].discard(final)
+    states = list(rg.nonterminals)
+    if any(final in targets for targets in transitions.values()):
+        states.append(final)
+        finals.add(final)
+    return FA(states, list(rg.terminals), rg.start, finals, transitions, dict(rg.classes))
 
 
 def main():
