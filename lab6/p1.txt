@@ -1,0 +1,39 @@
+int fanPin = 9;
+int sensorPin = 0;
+int limit = 30;
+int readings[5] = {0, 0, 0, 0, 0};
+
+setup {
+    mode fanPin output;
+    mode sensorPin input;
+}
+
+loop {
+    int i;
+    int total = 0;
+    int average;
+    int countdown = 3;
+
+    for (i = 0; i < 5; i = i + 1) {
+        read readings[i] from sensorPin;
+        total = total + readings[i];
+        delay 200;
+    }
+
+    average = total / 5;
+    print "Average: ", average;
+
+    if average > limit {
+        write high to fanPin;
+        print "Fan ON";
+    } else {
+        write low to fanPin;
+        print "Fan OFF";
+    }
+
+    while countdown > 0 {
+        print "Next check in: ", countdown;
+        delay 1000;
+        countdown = countdown - 1;
+    }
+}

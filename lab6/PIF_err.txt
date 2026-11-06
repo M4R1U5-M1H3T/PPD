@@ -1,0 +1,36 @@
+Program Internal Form (33 entries)
+
+token                    code   ST position
+int                      2      -
+ledPin                   0      (7, 0)
+=                        28     -
+13                       1      (4, 0)
+;                        42     -
+int                      2      -
+count                    0      (8, 0)
+=                        28     -
+0                        1      (22, 0)
+;                        42     -
+setup                    3      -
+{                        35     -
+mode                     5      -
+ledPin                   0      (7, 0)
+output                   7      -
+;                        42     -
+}                        36     -
+loop                     4      -
+{                        35     -
+write                    10     -
+high                     21     -
+to                       11     -
+ledPin                   0      (7, 0)
+;                        42     -
+delay                    13     -
+500                      1      (4, 1)
+count                    0      (8, 0)
+=                        28     -
+count                    0      (8, 0)
++                        23     -
+1                        1      (23, 0)
+;                        42     -
+}                        36     -

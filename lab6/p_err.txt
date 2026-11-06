@@ -1,0 +1,12 @@
+int ledPin = 13;
+int count = 0;
+
+setup {
+    mode ledPin output;
+}
+
+loop {
+    write high to ledPin;
+    delay 500
+    count = count + 1;
+}

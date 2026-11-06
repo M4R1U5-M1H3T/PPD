@@ -1,0 +1,46 @@
+nonterminals: program declaration_list block statement_list statement declaration type declaration_rest array_init expression_list expression_list_tail assignment_statement assignment lvalue index_opt pin_mode_statement direction read_statement write_statement print_statement print_item print_tail delay_statement if_statement else_part while_statement for_statement expression or_tail and_expr and_tail not_expr rel_expr rel_tail rel_op arith_expr arith_tail add_op term term_tail mul_op factor
+terminals: identifier constant int setup loop mode input output read from write to print delay if else while for and or not high low + - * / % = == != < <= > >= { } [ ] ( ) , ;
+start: program
+productions:
+program -> declaration_list setup block loop block
+declaration_list -> declaration declaration_list | epsilon
+block -> { statement_list }
+statement_list -> statement statement_list | epsilon
+statement -> declaration | assignment_statement | pin_mode_statement | read_statement | write_statement | print_statement | delay_statement | if_statement | while_statement | for_statement
+declaration -> type identifier declaration_rest ;
+type -> int
+declaration_rest -> = expression | [ constant ] array_init | epsilon
+array_init -> = { expression_list } | epsilon
+expression_list -> expression expression_list_tail
+expression_list_tail -> , expression expression_list_tail | epsilon
+assignment_statement -> assignment ;
+assignment -> lvalue = expression
+lvalue -> identifier index_opt
+index_opt -> [ expression ] | epsilon
+pin_mode_statement -> mode expression direction ;
+direction -> input | output
+read_statement -> read lvalue from expression ;
+write_statement -> write expression to expression ;
+print_statement -> print print_item print_tail ;
+print_item -> expression
+print_tail -> , print_item print_tail | epsilon
+delay_statement -> delay expression ;
+if_statement -> if expression block else_part
+else_part -> else block | epsilon
+while_statement -> while expression block
+for_statement -> for ( assignment ; expression ; assignment ) block
+expression -> and_expr or_tail
+or_tail -> or and_expr or_tail | epsilon
+and_expr -> not_expr and_tail
+and_tail -> and not_expr and_tail | epsilon
+not_expr -> not not_expr | rel_expr
+rel_expr -> arith_expr rel_tail
+rel_tail -> rel_op arith_expr | epsilon
+rel_op -> == | != | < | <= | > | >=
+arith_expr -> term arith_tail
+arith_tail -> add_op term arith_tail | epsilon
+add_op -> + | -
+term -> factor term_tail
+term_tail -> mul_op factor term_tail | epsilon
+mul_op -> * | / | %
+factor -> constant | high | low | lvalue | ( expression ) | - factor

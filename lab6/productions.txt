@@ -1,0 +1,637 @@
+String of productions (632 productions)
+
+1 4 5 5 5 5 5 5 5 5 5 6 15 45 4 5 5 5 6 8 27 28 47 49 50 52 54 55 57 64 65 66 69 71 75 68 69 71 78 29 31 29 31 13 41 47 49 50 52 54 55 57 64 66 69 71 75 12 37 39 40 38 47 49 50 52 54 55 57 64 66 69 71 78 29 31 38 47 49 50 52 54 55 57 64 66 69 71 75 47 49 50 52 54 55 56 64 66 69 71 75 62 64 66 69 71 78 29 31 14 42 43 4 5 5 6 12 37 40 38 47 49 50 52 54 55 57 64 66 69 71 75 11 36 47 49 50 52 54 55 57 64 66 69 71 78 29 31 47 49 50 52 54 55 57 64 66 69 71 77 4 5 5 6 12 37 40 38 47 49 50 52 54 55 57 64 66 69 71 75 11 36 47 49 50 52 54 55 57 64 66 69 71 78 29 31 47 49 50 52 54 55 57 64 66 69 71 76 47 49 50 52 54 55 56 64 66 69 71 78 29 31 62 64 66 69 71 78 29 31 12 37 39 40 38 47 49 50 52 54 55 57 64 66 69 71 78 29 31 38 47 49 50 52 54 55 57 64 66 69 71 75 8 27 28 47 49 50 52 54 55 57 64 66 69 70 71 75 73 78 29 31 29 31 16 46 4 5 5 5 6 13 41 47 49 50 52 54 55 57 64 66 69 71 75 8 27 28 47 49 50 52 54 55 57 64 65 66 69 71 78 29 30 47 49 50 52 54 55 57 64 66 69 71 78 29 31 67 69 71 78 29 31 29 31 10 35 47 49 50 52 54 55 57 64 66 69 71 78 29 31 29 30 47 49 50 52 54 55 57 64 66 69 71 78 29 31 28 47 49 50 52 54 55 57 64 65 66 69 71 75 67 69 71 78 29 31 29 31 47 49 50 52 54 55 56 64 66 69 71 75 60 64 66 69 71 78 29 31 28 47 49 50 52 54 55 57 64 66 69 71 75 29 31 7 17 19 47 49 50 52 54 55 57 64 66 69 71 75 18 7 17 21 18 7 17 19 47 49 50 52 54 55 57 64 66 69 71 75 18 7 17 21 18 4 5 5 6 9 32 33 47 49 50 52 54 55 57 64 66 69 71 78 29 31 9 32 34 47 49 50 52 54 55 57 64 66 69 71 78 29 31 2 2 2 2 3 17 20 22 24 25 25 25 25 26 47 49 50 52 54 55 57 64 66 69 71 75 47 49 50 52 54 55 57 64 66 69 71 75 47 49 50 52 54 55 57 64 66 69 71 75 47 49 50 52 54 55 57 64 66 69 71 75 47 49 50 52 54 55 57 64 66 69 71 75 18 17 19 47 49 50 52 54 55 57 64 66 69 71 75 18 17 19 47 49 50 52 54 55 57 64 66 69 71 75 18 17 19 47 49 50 52 54 55 57 64 66 69 71 75 18
+
+number   production
+1        program -> declaration_list setup block loop block
+4        block -> { statement_list }
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+6        statement_list -> epsilon
+15       statement -> while_statement
+45       while_statement -> while expression block
+4        block -> { statement_list }
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+6        statement_list -> epsilon
+8        statement -> assignment_statement
+27       assignment_statement -> assignment ;
+28       assignment -> lvalue = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+65       arith_tail -> add_op term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+68       add_op -> -
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+13       statement -> delay_statement
+41       delay_statement -> delay expression ;
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+12       statement -> print_statement
+37       print_statement -> print print_item print_tail ;
+39       print_tail -> , print_item print_tail
+40       print_tail -> epsilon
+38       print_item -> expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+38       print_item -> expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+56       rel_tail -> rel_op arith_expr
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+62       rel_op -> >
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+14       statement -> if_statement
+42       if_statement -> if expression block else_part
+43       else_part -> else block
+4        block -> { statement_list }
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+6        statement_list -> epsilon
+12       statement -> print_statement
+37       print_statement -> print print_item print_tail ;
+40       print_tail -> epsilon
+38       print_item -> expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+11       statement -> write_statement
+36       write_statement -> write expression to expression ;
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+77       factor -> low
+4        block -> { statement_list }
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+6        statement_list -> epsilon
+12       statement -> print_statement
+37       print_statement -> print print_item print_tail ;
+40       print_tail -> epsilon
+38       print_item -> expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+11       statement -> write_statement
+36       write_statement -> write expression to expression ;
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+76       factor -> high
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+56       rel_tail -> rel_op arith_expr
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+62       rel_op -> >
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+12       statement -> print_statement
+37       print_statement -> print print_item print_tail ;
+39       print_tail -> , print_item print_tail
+40       print_tail -> epsilon
+38       print_item -> expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+38       print_item -> expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+8        statement -> assignment_statement
+27       assignment_statement -> assignment ;
+28       assignment -> lvalue = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+70       term_tail -> mul_op factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+73       mul_op -> /
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+16       statement -> for_statement
+46       for_statement -> for ( assignment ; expression ; assignment ) block
+4        block -> { statement_list }
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+6        statement_list -> epsilon
+13       statement -> delay_statement
+41       delay_statement -> delay expression ;
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+8        statement -> assignment_statement
+27       assignment_statement -> assignment ;
+28       assignment -> lvalue = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+65       arith_tail -> add_op term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+30       index_opt -> [ expression ]
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+67       add_op -> +
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+10       statement -> read_statement
+35       read_statement -> read lvalue from expression ;
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+29       lvalue -> identifier index_opt
+30       index_opt -> [ expression ]
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+28       assignment -> lvalue = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+65       arith_tail -> add_op term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+67       add_op -> +
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+56       rel_tail -> rel_op arith_expr
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+60       rel_op -> <
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+28       assignment -> lvalue = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+7        statement -> declaration
+17       declaration -> type identifier declaration_rest ;
+19       declaration_rest -> = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+18       type -> int
+7        statement -> declaration
+17       declaration -> type identifier declaration_rest ;
+21       declaration_rest -> epsilon
+18       type -> int
+7        statement -> declaration
+17       declaration -> type identifier declaration_rest ;
+19       declaration_rest -> = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+18       type -> int
+7        statement -> declaration
+17       declaration -> type identifier declaration_rest ;
+21       declaration_rest -> epsilon
+18       type -> int
+4        block -> { statement_list }
+5        statement_list -> statement statement_list
+5        statement_list -> statement statement_list
+6        statement_list -> epsilon
+9        statement -> pin_mode_statement
+32       pin_mode_statement -> mode expression direction ;
+33       direction -> input
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+9        statement -> pin_mode_statement
+32       pin_mode_statement -> mode expression direction ;
+34       direction -> output
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+78       factor -> lvalue
+29       lvalue -> identifier index_opt
+31       index_opt -> epsilon
+2        declaration_list -> declaration declaration_list
+2        declaration_list -> declaration declaration_list
+2        declaration_list -> declaration declaration_list
+2        declaration_list -> declaration declaration_list
+3        declaration_list -> epsilon
+17       declaration -> type identifier declaration_rest ;
+20       declaration_rest -> [ constant ] array_init
+22       array_init -> = { expression_list }
+24       expression_list -> expression expression_list_tail
+25       expression_list_tail -> , expression expression_list_tail
+25       expression_list_tail -> , expression expression_list_tail
+25       expression_list_tail -> , expression expression_list_tail
+25       expression_list_tail -> , expression expression_list_tail
+26       expression_list_tail -> epsilon
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+18       type -> int
+17       declaration -> type identifier declaration_rest ;
+19       declaration_rest -> = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+18       type -> int
+17       declaration -> type identifier declaration_rest ;
+19       declaration_rest -> = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+18       type -> int
+17       declaration -> type identifier declaration_rest ;
+19       declaration_rest -> = expression
+47       expression -> and_expr or_tail
+49       or_tail -> epsilon
+50       and_expr -> not_expr and_tail
+52       and_tail -> epsilon
+54       not_expr -> rel_expr
+55       rel_expr -> arith_expr rel_tail
+57       rel_tail -> epsilon
+64       arith_expr -> term arith_tail
+66       arith_tail -> epsilon
+69       term -> factor term_tail
+71       term_tail -> epsilon
+75       factor -> constant
+18       type -> int
